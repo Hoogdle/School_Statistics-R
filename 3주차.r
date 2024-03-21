@@ -46,3 +46,41 @@ cv
 height = c(162,163,166,168,169,171,173,174,175,179)
 weight = c(54,56,56,64,62,64,82,67,71,74)
 
+height
+weight
+
+students = data.frame(height,weight) #여러 개의 변수를 하나의 데이터 set으로 join
+# height와 weight를 묶어서 student라는 변수 만듦
+students
+# 1     162     54
+# 2     163     56
+# 3     166     56
+# 4     168     64
+# 5     169     62
+# 6     171     64
+# 7     173     82
+# 8     174     67
+# 9     175     71
+# 10    179     74
+
+str(students)
+# 'data.frame':   10 obs. of  2 variables:
+#  $ height: num  162 163 166 168 169 171 173 174 175 179
+#  $ weight: num  54 56 56 64 62 64 82 67 71 74
+### 2개의 변수로 20개의 데이터를 읽은 것을 확인할 수 있음
+
+# 자료가 height,weight,student 이렇게 3가지가 존재.
+# 어떤 데이터 set에 있는 변수인지 확인해야한다.
+# => attach(students)로 이후의 변수들은 students안에 있는 변수들이다. 라고 선언하는 것
+attach(students)
+# The following objects are masked _by_ .GlobalEnv:
+
+#     height, weight
+plot(height,weight,main="Scatter plot") #main은 그래프에 대한 Title(제목 짓기!)
+# weight와 height가 가리키는 산점도를 그려주는 plot
+# 1 parameter => x축, 2 parmeter => y축
+
+# cor() : 상관계수 계산, 복잡한 계산 root를 한 번에 계산해줌!
+cor(weight,height)
+#[1] 0.834219
+
