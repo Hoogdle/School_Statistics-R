@@ -139,6 +139,30 @@ prop.test(x=18,n=30,p=0.5,correct=F) # correct는 연속성 수정 관련, corre
 
 
 
+### 1집단 모분산 ###
+data = c(226,228,226,225,232,228,227,229,225,230)
+xbar = mean(x)
+n = lenth(x)
+s2 = var(x) # 표본분산
+lcl = ((n-1)*s2)/qchisq(0.975,n-1) #하한
+ucl = ((n-1)*s2)/qchisq(0.025,n-1) #상한
+
+lcl
+ucl
+
+#### 1집단 모분산 검정 0.05 ####
+
+sigma2 = 1.5^2 # 모분산
+chisq0 = (n-1)*s2/sigma2 # 검벙 통계량 chi^2
+chisq0 
+qchisq(0.95,9) # 0.05 임계치
+pval = 1 - pchisq(chisq0,n-1) # (pvalue) P(chi^2 > chisq0)=
+pval # 유의수준 -> 0.05 > p-value H0 기각
+# 책에는 1프로인데 교수님은 임계치를 0.05프로 하심
+# 사진 참고
 
 
 
+
+
+ 
