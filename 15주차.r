@@ -146,7 +146,7 @@ t.test(Before,After,mu=5,paired=T) #mu(대응비교의 차잇값)의 default는 
 # mean difference
 #        1.833333
 
-### {모비율에 대한 비교}
+### {모비율에 대한 비교} (두 집단 모비율의 비교는 정규근사!)
 
 n1 = 100
 n2 = 100
@@ -175,7 +175,7 @@ U #[1] -0.02259323
 ### prop.test로 위 과정을 심플화 가능
 ### 대신 z는 구하지 못하지만 p-value를 구할 순 있다!
 
-### prop.test
+### prop.test(just 참고용)
 
 prop.test(x=c(21,38), n=c(100,100), correct=F, conf.level=0.99) # conf.level == 99프로 신뢰구간 (양측검증)
 
@@ -208,3 +208,4 @@ prop.test(x=c(21,38), n=c(100,100), correct=F, alt="less",conf.level=0.99) # con
 
 
 
+# 연습문제 1,2,3,4,5(분산),6(등분산 평균 비교),7~~9(두 집단 모비율 비교)
